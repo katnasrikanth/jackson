@@ -23,11 +23,11 @@ public class Convert2json {
 		
     List<Customer> customers = readExcelFile("customers-1.xlsx");
 	    
-	    String input_param = "Jack Smith";
+	    String input_param = "Nikhil";
 	    
 	    String jsonString = convertObjects2JsonString(input_param,customers);
 	    
-	    System.out.println("here-->"+ jsonString);
+	    System.out.println("Customer-->"+ jsonString);
 	  }
 	  
 
@@ -84,7 +84,7 @@ public class Convert2json {
 	        }
 	  }
 	  
-	  private static String convertObjects2JsonString(String input_param, List<Customer> customers) {
+	  private static String convertObjects2JsonString(String Nikhil, List<Customer> customers) {
 	      ObjectMapper mapper = new ObjectMapper();
 	      String jsonString = "" ;
 
@@ -92,7 +92,7 @@ public class Convert2json {
 	    	  //comparing Customer name, if you want any other filed to compare
 	    	  // get that filed in place of ee.getName()
 		      List<Customer> list = customers.stream().filter(
-		    		  ee-> ee.getName().equals(input_param)).collect(Collectors.toList());
+		    		  ee-> ee.getName().equals(Nikhil)).collect(Collectors.toList());
 	    	  if(list.size()==0) {
 	    		  throw new IllegalAccessError();
 	    	  }
